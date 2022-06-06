@@ -342,7 +342,27 @@ public class BST_Fish_Tree {
         return deleteChild;
     }
 
-    private BST_Node deleteTwoChildNode(BST_Node deleted) {
+    private BST_Node deleteTwoChildNodeByMerging(BST_Node deleted) {
+        BST_Node ok = search(deleted.fish);
+        if (ok == null) {
+            return null;
+        }
+        BST_Node father = deleted;
+        BST_Node rightMost = deleted.left;
+        while (rightMost.right != null){
+            father = rightMost;
+            rightMost = rightMost.right;
+        }
+        deleted.fish = rightMost.fish;
+        int count = countChild(rightMost);
+        if (count == 0) {
+            return deleteLef(father, rightMost);
+        } else {
+            return deleteOneChildNode(father, rightMost);
+        }
+    }
+
+    private BST_Node deleteTwoChildNodeByCopy(BST_Node deleted) {
         BST_Node father = deleted;
         BST_Node rightMost = deleted.left;
         while (rightMost.right != null) {
@@ -386,7 +406,7 @@ public class BST_Fish_Tree {
         if (count == 1) {
             return deleteOneChildNode(father, deleted);
         }
-        return deleteTwoChildNode(deleted);
+        return deleteTwoChildNodeByCopy(deleted);
     }
 
     private class Node_Level {
