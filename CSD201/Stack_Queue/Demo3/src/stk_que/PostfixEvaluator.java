@@ -49,7 +49,7 @@ public class PostfixEvaluator {
     }
     
     public static void main(String[] args) {
-        String exp = "((3)(4)*(5)(6)* +(3)*";
+        String exp = "((2)(3)(4) + *(5)-";
         System.out.println(evaluate(exp));
     }
 }
