@@ -276,7 +276,7 @@ public class BSTree {
       to complete the question in the exam paper.*/
         ArrayList<Boo> t = new ArrayList<>();
         preOrder(t, root);
-        Boo p = t.get(3);
+        Boo p = t.get(4);
         deleByCopy(p);
         //------------------------------------------------------------------------------------
         preOrder(root, f);

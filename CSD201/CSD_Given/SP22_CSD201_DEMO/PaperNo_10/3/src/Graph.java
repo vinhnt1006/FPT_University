@@ -133,6 +133,7 @@ public class Graph {
 //===========================================================================
 //(2)===YOU CAN EDIT OR EVEN ADD NEW FUNCTIONS IN THE FOLLOWING PART========
 //===========================================================================
+    
     void depth2(ArrayList<Integer> list, boolean[] visited, int k, RandomAccessFile f) throws Exception {
         list.add(k);
         visited[k] = true;
@@ -186,6 +187,7 @@ public class Graph {
         boolean[] S = new boolean[n];
         int[] d = new int[n];
         int[] p = new int[n];
+        int dis = 0;
         int i, j, k, t;
         for (i = 0; i < n; i++) {
             S[i] = false;

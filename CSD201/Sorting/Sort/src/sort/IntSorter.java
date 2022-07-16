@@ -141,7 +141,7 @@ public class IntSorter {
     }
 
     public static void heapSort(int a[], int n) {
-        for (int i = n / 2 - 1; i >= 0; i--) {
+        for (int i = n >> 1 - 1; i >= 0; i--) {
             moveDown(a, i, n - 1);
         }
         for (int i = n - 1; i >= 1; --i) {

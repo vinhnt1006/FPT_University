@@ -11,7 +11,7 @@ public class IntSorterTest {
     public static void genArray(int a[], int n) {
         Random ran = new Random(System.currentTimeMillis());
         for (int i = 0; i < n; i++) {
-            a[i] = ran.nextInt(1000);
+            a[i] = ran.nextInt(10000);
         }
     }
 
